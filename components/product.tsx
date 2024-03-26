@@ -9,11 +9,12 @@ interface ProductProps {
     newPrice: string;
     textArray: string[];
     image: string;
+    color: string;
 }
 
 export default function Product(props: ProductProps) {
     return (
-        <div className={`bg-gradient-to-r ${props.colorFrom} ${props.colorTo} m-4 fuchsia p-8 h-80 w-full rounded-2xl flex justify-between relative drop-shadow-sm hover:-translate-y-1 duration-100 ease-out hover:drop-shadow-lg hover:cursor-pointer`}>
+        <div className={`bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} my-4 mx-20 fuchsia p-8 h-80 w-full rounded-2xl flex justify-between relative drop-shadow-sm hover:-translate-y-1 duration-100 ease-out hover:drop-shadow-lg hover:cursor-pointer`}>
         <div>
             <h3 className="mb-2">{props.title}</h3>
             <p className="text-xs text-gray-500 line-through">${props.oldPrice} per month</p>

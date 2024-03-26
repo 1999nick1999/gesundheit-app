@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/button";
 const links = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Shop', href: '/shop', icon: ShoppingBag },
-    { name: 'About us', href: '/About', icon: LayoutList },
-    { name: 'Contact', href: '/Contact', icon: Mails },
-    { name: 'Account', href: '/Account', icon: User },
-    { name: 'Cart', href: '/Cart', icon: ShoppingCart },
+    { name: 'About us', href: '/about', icon: LayoutList },
+    { name: 'Contact', href: '/contact', icon: Mails },
+    { name: 'Account', href: '/account', icon: User },
+    { name: 'Cart', href: '/cart', icon: ShoppingCart },
   ];
  
 export default function NavLinks() {
