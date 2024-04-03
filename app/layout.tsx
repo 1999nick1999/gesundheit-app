@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ nunito.className } flex justify-center`}>
+      <body className={`${ nunito.className } flex justify-center overflow-y-scroll`}>
         <div className="max-w-screen-2xl w-full">
           <header className="fixed left-10 top-20 gap-8">
             <Link href={"/"}>
