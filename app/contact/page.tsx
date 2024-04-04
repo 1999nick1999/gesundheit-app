@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { TextArea } from "@/components/textArea";
+import Footer from "@/components/footer";
 
 const formSchema = z.object({
   username: z.string().min(2).max(50),
@@ -26,12 +27,9 @@ const formSchema = z.object({
       message: "the order number uses only numbers",
     }),
   email: z.string().email(),
-  question: z
-    .string()
-    .min(1, "Please fill in a question")
-    .max(250, {
-      message: "The question can be a maximum of 250 characters long.",
-    }),
+  question: z.string().min(1, "Please fill in a question").max(250, {
+    message: "The question can be a maximum of 250 characters long.",
+  }),
 });
 
 export default function Contact() {
@@ -127,6 +125,7 @@ export default function Contact() {
           <Button type="submit">Submit</Button>
         </form>
       </Form>
+      <Footer />
     </main>
   );
 }

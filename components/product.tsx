@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/drawer";
 import { useState } from "react";
 import { ShoppingCart } from "lucide-react";
+import clsx from "clsx";
 
 interface ProductProps {
   colorFrom: string;
@@ -99,6 +100,10 @@ export default function Product(props: ProductProps) {
                       setCount(count + -1);
                     }
                   }}
+                  className={clsx("", {
+                    "bg-gray-300 hover:bg-gray-300 hover:cursor-default":
+                      count === 1,
+                  })}
                 >
                   -
                 </Button>
@@ -111,6 +116,10 @@ export default function Product(props: ProductProps) {
                       setCount(count + 1);
                     }
                   }}
+                  className={clsx("", {
+                    "bg-gray-300 hover:bg-gray-300 hover:cursor-default":
+                      count === 4,
+                  })}
                 >
                   +
                 </Button>
