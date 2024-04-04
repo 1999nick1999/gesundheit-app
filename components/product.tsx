@@ -7,10 +7,7 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useState } from "react";
@@ -128,7 +125,7 @@ export default function Product(props: ProductProps) {
                 <DrawerClose asChild>
                   <Button className="w-full gap-2">
                     <ShoppingCart className="w-4" />
-                    Add to basket
+                    Add to cart
                   </Button>
                 </DrawerClose>
                 <DrawerClose asChild>
