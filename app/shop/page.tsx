@@ -23,6 +23,7 @@ export default async function Shop() {
           />
         ))}
       </div>
+      <div className="from-fuchsia-300 to-fuchsia-100 from-purple-300 to-purple-100 from-violet-300 to-violet-100 from-pink-300 to-pink-100 hidden"></div>
       <Footer></Footer>
     </main>
   );
