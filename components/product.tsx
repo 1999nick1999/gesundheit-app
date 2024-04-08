@@ -23,11 +23,55 @@ interface ProductProps {
   textArray: string[];
   image: string;
   color: string;
+  key: number;
 }
 
 export default function Product(props: ProductProps) {
   const [count, setCount] = useState(1);
   const initPrice = parseFloat(props.newPrice.replace(",", "."));
+  console.log(`These are the keys of ${props.title} : ${props.key}`);
+
+  function pushToCart(item: string) {
+    console.log("function runs at least");
+    if (localStorage.getItem("cart") === null) {
+      console.log("added new item to cart " + item);
+      let addedItems = [
+        {
+          colorFrom: props.colorFrom,
+          colorTo: props.colorTo,
+          title: props.title,
+          oldPrice: props.oldPrice,
+          newPrice: props.newPrice,
+          textArray: props.textArray,
+          image: props.image,
+          color: props.color,
+          productid: "1",
+          quantity: count,
+        },
+      ];
+      let string = JSON.stringify(addedItems);
+      localStorage.setItem("cart", string);
+    } else {
+      console.log("added more items to cart " + item);
+      let cartContent = localStorage.getItem("cart") || "";
+      let cartObjects = JSON.parse(cartContent);
+      let countItemsCart = cartObjects.length + 1;
+      cartObjects.push({
+        colorFrom: props.colorFrom,
+        colorTo: props.colorTo,
+        title: props.title,
+        oldPrice: props.oldPrice,
+        newPrice: props.newPrice,
+        textArray: props.textArray,
+        image: props.image,
+        color: props.color,
+        productid: countItemsCart,
+        quantity: count,
+      });
+      let string = JSON.stringify(cartObjects);
+      localStorage.setItem("cart", string);
+    }
+  }
 
   return (
     <>
@@ -123,7 +167,10 @@ export default function Product(props: ProductProps) {
               </div>
               <div className="w-full flex flex-col items-center justify-center gap-2">
                 <DrawerClose asChild>
-                  <Button className="w-full gap-2">
+                  <Button
+                    className="w-full gap-2"
+                    onClick={() => pushToCart(props.title)}
+                  >
                     <ShoppingCart className="w-4" />
                     Add to cart
                   </Button>
