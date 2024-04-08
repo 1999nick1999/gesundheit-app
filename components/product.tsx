@@ -133,7 +133,7 @@ export default function Product(props: ProductProps) {
               </div>
             </div>
             <DrawerFooter className="flex flex-col items-center">
-              <p>price per month: ${initPrice * count}</p>
+              <p>price per month: ${(initPrice * count).toFixed(2)}</p>
               <div className="w-full flex justify-between my-4">
                 <Button
                   onClick={() => {

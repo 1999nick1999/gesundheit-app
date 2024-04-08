@@ -57,7 +57,9 @@ export default function CartItem(props: ProductProps) {
         <div className="flex justify-between items-end">
           <div>
             <p className="text-xs text-gray-500">quantity: {props.quantity}</p>
-            <p className="text-xs text-fuchsia-900">${cost} per month</p>
+            <p className="text-xs text-fuchsia-900">
+              ${cost.toFixed(2)} per month
+            </p>
           </div>
           <Trash2 className="text-gray-500 hover:text-red-500 hover:cursor-pointer ease-out duration-100" />
         </div>
