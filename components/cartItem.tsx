@@ -31,7 +31,6 @@ export default function CartItem(props: ProductProps) {
     <>
       <div
         className={`bg-white my-4 fuchsia p-8 h-80 w-auto rounded-2xl flex flex-col justify-between relative`}
-        onClick={handleDelete}
       >
         <div className="flex justify-between">
           <div>
@@ -61,7 +60,10 @@ export default function CartItem(props: ProductProps) {
               ${cost.toFixed(2)} per month
             </p>
           </div>
-          <Trash2 className="text-gray-500 hover:text-red-500 hover:cursor-pointer ease-out duration-100" />
+          <Trash2
+            className="text-gray-500 hover:text-red-500 hover:cursor-pointer ease-out duration-100"
+            onClick={handleDelete}
+          />
         </div>
       </div>
     </>
