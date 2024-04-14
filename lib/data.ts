@@ -2,12 +2,17 @@ import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 import { Products } from "@/lib/definitions";
 
-export async function fetchProducts() {
+const ITEMS_PER_PAGE = 6;
+
+export async function fetchProducts(query: string, currentPage: number) {
+  console.log(query);
   noStore();
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   try {
     const data = await sql<Products>`
         SELECT *
-        FROM Products`;
+        FROM Products
+        WHERE Products.title ILIKE ${`%${query}%`}`;
 
     return data.rows;
   } catch (error) {

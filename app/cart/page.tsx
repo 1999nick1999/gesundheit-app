@@ -39,11 +39,9 @@ export default function Cart() {
   }, []);
 
   const deleteItem = (productid: string) => {
-    console.log(cartItems);
     const updatedCartItems = cartItems.filter(
       (item) => item.productid !== productid
     );
-    console.log(updatedCartItems);
     setCartItems(updatedCartItems);
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
   };
@@ -67,7 +65,7 @@ export default function Cart() {
               textArray={products.textArray}
               image={products.image}
               color={products.color}
-              key={products.key}
+              key={products.key + index.toString()}
               productid={products.productid}
               quantity={products.quantity}
               deleteItem={deleteItem}

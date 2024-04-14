@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
-import { useEffect } from "react";
 
 interface ProductProps {
   colorFrom: string;
@@ -62,7 +61,10 @@ export default function CartItem(props: ProductProps) {
           </div>
           <Trash2
             className="text-gray-500 hover:text-red-500 hover:cursor-pointer ease-out duration-100"
-            onClick={handleDelete}
+            onClick={() => {
+              handleDelete();
+              window.dispatchEvent(new Event("storage"));
+            }}
           />
         </div>
       </div>

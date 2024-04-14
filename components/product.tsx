@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { PlusCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LocalButton from "@/components/localButton";
 import {
   Drawer,
   DrawerClose,
@@ -11,7 +12,6 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useState } from "react";
-import { ShoppingCart } from "lucide-react";
 import clsx from "clsx";
 
 interface ProductProps {
@@ -24,52 +24,20 @@ interface ProductProps {
   image: string;
   color: string;
   key: number;
+  query: string;
+  currentPage: number;
 }
 
 export default function Product(props: ProductProps) {
   const [count, setCount] = useState(1);
   const initPrice = parseFloat(props.newPrice.replace(",", "."));
-  console.log(`These are the keys of ${props.title} : ${props.key}`);
 
-  function pushToCart(item: string) {
-    console.log("function runs at least");
-    if (localStorage.getItem("cart") === null) {
-      console.log("added new item to cart " + item);
-      let addedItems = [
-        {
-          colorFrom: props.colorFrom,
-          colorTo: props.colorTo,
-          title: props.title,
-          oldPrice: props.oldPrice,
-          newPrice: props.newPrice,
-          textArray: props.textArray,
-          image: props.image,
-          color: props.color,
-          productid: "1",
-          quantity: count,
-        },
-      ];
-      let string = JSON.stringify(addedItems);
-      localStorage.setItem("cart", string);
-    } else {
-      console.log("added more items to cart " + item);
+  function countCartItems() {
+    if (typeof window !== "undefined") {
       let cartContent = localStorage.getItem("cart") || "";
       let cartObjects = JSON.parse(cartContent);
       let countItemsCart = cartObjects.length + 1;
-      cartObjects.push({
-        colorFrom: props.colorFrom,
-        colorTo: props.colorTo,
-        title: props.title,
-        oldPrice: props.oldPrice,
-        newPrice: props.newPrice,
-        textArray: props.textArray,
-        image: props.image,
-        color: props.color,
-        productid: countItemsCart,
-        quantity: count,
-      });
-      let string = JSON.stringify(cartObjects);
-      localStorage.setItem("cart", string);
+      return countItemsCart;
     }
   }
 
@@ -166,14 +134,21 @@ export default function Product(props: ProductProps) {
                 </Button>
               </div>
               <div className="w-full flex flex-col items-center justify-center gap-2">
-                <DrawerClose asChild>
-                  <Button
-                    className="w-full gap-2"
-                    onClick={() => pushToCart(props.title)}
-                  >
-                    <ShoppingCart className="w-4" />
-                    Add to cart
-                  </Button>
+                <DrawerClose className="w-full">
+                  <LocalButton
+                    colorFrom={props.colorFrom}
+                    colorTo={props.colorTo}
+                    title={props.title}
+                    oldPrice={props.oldPrice}
+                    newPrice={props.newPrice}
+                    textArray={props.textArray}
+                    image={props.image}
+                    color={props.color}
+                    key={countCartItems()}
+                    count={count}
+                    query={props.query}
+                    currentPage={props.currentPage}
+                  />
                 </DrawerClose>
                 <DrawerClose asChild>
                   <Button variant="outline" className="w-full">
