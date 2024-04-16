@@ -76,7 +76,10 @@ export default async function Shop() {
   //   },
   // ];
 
-  const products = await fetchProducts();
+  const query = "";
+  const currentPage = 1;
+
+  const products = await fetchProducts(query, currentPage);
 
   // console.log(objects);
   console.log(products);
@@ -112,6 +115,8 @@ export default async function Shop() {
             image={products.imageurl}
             color={products.color}
             key={products.productid}
+            query={query}
+            currentPage={currentPage}
           />
         ))}
       </div>

@@ -1,11 +1,11 @@
 import Footer from "@/components/footer";
 import Product from "@/components/product";
 import { fetchProducts } from "@/lib/data";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { fetchShopPages } from "@/lib/data";
 import { Separator } from "@/components/ui/separator";
 import Search from "@/components/search";
 import { Suspense } from "react";
+import Pagination from "@/components/ui/pagination";
 
 export default async function Shop({
   searchParams,
@@ -18,6 +18,7 @@ export default async function Shop({
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const products = await fetchProducts(query, currentPage);
+  const totalPages = await fetchShopPages(query);
 
   return (
     <main className="bg-gray-200 rounded-lg pt-20 overflow-hidden">
@@ -46,6 +47,9 @@ export default async function Shop({
             />
           ))}
         </Suspense>
+        <div className="mt-5 px-20 flex w-full justify-center">
+          <Pagination totalPages={totalPages} />
+        </div>
       </div>
       <div className="from-fuchsia-300 to-fuchsia-100 from-purple-300 to-purple-100 from-violet-300 to-violet-100 from-pink-300 to-pink-100 hidden"></div>
       <Footer></Footer>

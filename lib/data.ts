@@ -12,11 +12,27 @@ export async function fetchProducts(query: string, currentPage: number) {
     const data = await sql<Products>`
         SELECT *
         FROM Products
-        WHERE Products.title ILIKE ${`%${query}%`}`;
+        WHERE Products.title ILIKE ${`%${query}%`}
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}`;
 
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch the products.");
+  }
+}
+
+export async function fetchShopPages(query: string) {
+  noStore();
+  try {
+    const count = await sql`SELECT COUNT(*)
+    FROM Products
+    WHERE Products.title ILIKE ${`%${query}%`}`;
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch total number of invoices.");
   }
 }
