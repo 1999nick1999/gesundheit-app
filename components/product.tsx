@@ -34,7 +34,7 @@ export default function Product(props: ProductProps) {
 
   function countCartItems() {
     if (typeof window !== "undefined") {
-      let cartContent = localStorage.getItem("cart") || "";
+      let cartContent = localStorage.getItem("cart") || "{}";
       let cartObjects = JSON.parse(cartContent);
       let countItemsCart = cartObjects.length + 1;
       return countItemsCart;
