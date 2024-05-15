@@ -29,9 +29,9 @@ export default function CartItem(props: ProductProps) {
   return (
     <>
       <div
-        className={`bg-white my-4 fuchsia p-8 h-80 w-auto rounded-2xl flex flex-col justify-between relative`}
+        className={`bg-white my-4 fuchsia p-8 h-full xl:h-80 w-auto rounded-2xl flex flex-col justify-between relative`}
       >
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-col-reverse xl:flex-row">
           <div>
             <h3 className="mb-2">{props.title}</h3>
             <ul className="list-disc ml-4 mt-4">
@@ -41,7 +41,7 @@ export default function CartItem(props: ProductProps) {
             </ul>
           </div>
           <div
-            className={`h-40 w-40 flex items-center justify-center bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} rounded-lg`}
+            className={`w-full aspect-square mb-4 xl:mb-0 xl:h-40 xl::w-40 flex items-center justify-center bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} rounded-lg`}
           >
             <Image
               src={`/images/${props.image}.png`}
@@ -53,7 +53,7 @@ export default function CartItem(props: ProductProps) {
           </div>
         </div>
         <div className="flex justify-between items-end">
-          <div>
+          <div className="mt-4 xl:mt-0">
             <p className="text-xs text-gray-500">quantity: {props.quantity}</p>
             <p className="text-xs text-fuchsia-900">
               ${cost.toFixed(2)} per month

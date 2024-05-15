@@ -4,9 +4,11 @@ import Footer from "@/components/footer";
 
 export default function About() {
   return (
-    <main className="bg-gray-200 rounded-lg pt-20 overflow-hidden">
-      <h2 className="px-20 text-fuchsia-900 mb-6">Hello we are Gesundheit</h2>
-      <p className="px-20 text-gray-500">
+    <main className="bg-gray-200 rounded-lg pt-8 xl:pt-20 overflow-hidden">
+      <h2 className="px-8 xl:px-20 text-fuchsia-900 mb-6">
+        Hello we are Gesundheit
+      </h2>
+      <p className="px-8 xl:px-20 text-gray-500">
         Welcome to Gesundheit, where beauty meets simplicity. At Gesundheit,
         we&aposre passionate about providing top-notch skincare solutions
         without the fuss. Our mission is clear: to offer high-quality products
@@ -33,10 +35,10 @@ export default function About() {
       <Image
         src={aboutPhoto}
         alt="Photo of our team"
-        className="w-full my-20"
+        className="w-full my-8 xl:my-20"
       ></Image>
-      <h2 className="px-20 text-fuchsia-900 mb-6">Meet our team</h2>
-      <p className="px-20 text-gray-500 mb-20">
+      <h2 className="px-8 xl:px-20 text-fuchsia-900 mb-6">Meet our team</h2>
+      <p className="px-8 xl:px-20 text-gray-500 mb-20">
         Meet the vibrant team behind Gesundheit – a dynamic group of young
         individuals united by their passion for skincare and commitment to
         excellence. Diverse in backgrounds and talents, our team brings a wealth

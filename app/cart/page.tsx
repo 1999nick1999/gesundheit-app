@@ -47,14 +47,14 @@ export default function Cart() {
   };
 
   return (
-    <main className="bg-gray-200 rounded-lg pt-20 overflow-hidden w-full">
-      <h2 className="text-fuchsia-900 px-20 mb-6">Cart</h2>
+    <main className="bg-gray-200 rounded-lg pt-8 xl:pt-20 overflow-hidden w-full">
+      <h2 className="text-fuchsia-900 px-8 xl:px-20 mb-6">Cart</h2>
       {cartItems.length === 0 ? (
-        <div className="w-full h-40 flex justify-center items-center mb-6">
+        <div className="w-full h-80 xl:h-40 flex justify-center items-center mb-6">
           <p>Nothing in your cart</p>
         </div>
       ) : (
-        <div className="w-full mb-20 px-20">
+        <div className="w-full mb-20 px-8 xl:px-20">
           {cartItems.map((products, index) => (
             <CartItem
               colorFrom={products.colorFrom}

@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center md:h-screen">
-      <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
-        <div className="h-20 w-full rounded-lg bg-fuchsia-700 p-3 md:h-36 flex justify-center items-center">
+      <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-0 xl:p-4 md:-mt-32">
+        <div className="h-20 w-full rounded-lg bg-fuchsia-700 p-3 md:h-36 justify-center items-center hidden xl:flex">
           <Image
             src={GesundheitLogo}
             alt="Logo Gesundheit"

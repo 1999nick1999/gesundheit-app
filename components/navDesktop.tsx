@@ -5,7 +5,7 @@ import NavLinks from "@/components/nav";
 
 export default function NavDesktop() {
   return (
-    <header className="fixed left-10 top-20 gap-8">
+    <header className="fixed left-10 top-20 gap-8 hidden xl:block">
       <Link href={"/"}>
         <div className="w-60 h-40 rounded-lg bg-fuchsia-700 mb-4 flex justify-center items-center">
           <Image

@@ -29,7 +29,10 @@ export default function RootLayout({
         >
           <div className="max-w-screen-2xl w-full">
             <NavDesktop />
-            <div className="px-80 py-20">{children}</div>
+            <div className="w-full flex justify-center">
+              <NavMobile />
+            </div>
+            <div className="px-8 xl:px-80 py-28 xl:py-20">{children}</div>
           </div>
         </body>
       </SessionProvider>

@@ -21,12 +21,14 @@ export default async function Shop({
   const totalPages = await fetchShopPages(query);
 
   return (
-    <main className="bg-gray-200 rounded-lg pt-20 overflow-hidden">
-      <h2 className="text-fuchsia-900 px-20 mb-6">Select your subscription</h2>
-      <div className="px-20 py-8 flex flex-col gap-3 text-gray-800">
+    <main className="bg-gray-200 rounded-lg pt-8 xl:pt-20 overflow-hidden">
+      <h2 className="text-fuchsia-900 px-8 xl:px-20 xl:mb-6">
+        Select your subscription
+      </h2>
+      <div className="px-8 xl:px-20 py-8 flex flex-col gap-3 text-gray-800">
         <Search placeholder="Search..." />
       </div>
-      <div className="px-20">
+      <div className="px-8 xl:px-20">
         <Separator className="mb-4 bg-gray-300" />
       </div>
       <div className="flex flex-wrap mb-10">
@@ -47,7 +49,7 @@ export default async function Shop({
             />
           ))}
         </Suspense>
-        <div className="mt-5 px-20 flex w-full justify-center">
+        <div className="mt-5 px-8 xl:px-20 flex w-full justify-center">
           <Pagination totalPages={totalPages} />
         </div>
       </div>

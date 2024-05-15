@@ -46,7 +46,7 @@ export default function Product(props: ProductProps) {
       <Drawer>
         <DrawerTrigger asChild>
           <div
-            className={`bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} my-4 mx-20 fuchsia p-8 h-80 w-full rounded-2xl flex justify-between relative drop-shadow-sm hover:-translate-y-1 duration-100 ease-out hover:drop-shadow-lg hover:cursor-pointer`}
+            className={`bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} my-4 mx-8 xl:mx-20 fuchsia p-8 h-full xl:h-80 w-full rounded-2xl flex flex-col xl:flex-row justify-between relative drop-shadow-sm hover:-translate-y-1 duration-100 ease-out hover:drop-shadow-lg hover:cursor-pointer`}
           >
             <div>
               <h3 className="mb-2">{props.title}</h3>
@@ -68,7 +68,7 @@ export default function Product(props: ProductProps) {
                 alt="product image"
                 width={200}
                 height={200}
-                className="w-52 h-52"
+                className="w-52 h-52 my-10 xl:my-0"
               ></Image>
             </div>
             <div></div>

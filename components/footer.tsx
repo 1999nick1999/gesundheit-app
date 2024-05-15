@@ -9,8 +9,8 @@ import {
 
 export default function Footer() {
   return (
-    <div className="bg-fuchsia-200 w-full px-20 py-10">
-      <div className="flex justify-between">
+    <div className="bg-fuchsia-200 w-full px-8 xl:px-20 py-10">
+      <div className="flex flex-col gap-8 xl:gap-0 xl:flex-row justify-between">
         {/* company info */}
         <div>
           <div className="w-28 h-20 flex justify-center items-center">
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex gap-8 my-10">
+      <div className="flex flex-row flex-wrap gap-8 my-10">
         <IoLogoFacebook className="w-6 h-6 fill-fuchsia-900" />
         <IoLogoTwitter className="w-6 h-6 fill-fuchsia-900" />
         <IoLogoPinterest className="w-6 h-6 fill-fuchsia-900" />
@@ -66,9 +66,11 @@ export default function Footer() {
         <IoLogoLinkedin className="w-6 h-6 fill-fuchsia-900" />
         <IoLogoYoutube className="w-6 h-6 fill-fuchsia-900" />
       </div>
-      <div className="flex justify-between">
-        <p className="text-xs text-fuchsia-900">© 2024 Gesundheit</p>
-        <div className="flex gap-8">
+      <div className="flex flex-col xl:flex-row justify-between">
+        <p className="text-xs text-fuchsia-900 mb-4 xl:mb-0">
+          © 2024 Gesundheit
+        </p>
+        <div className="flex flex-col xl:flex-row gap-2 xl:gap-8">
           <p className="text-xs text-fuchsia-900">Privacy</p>
           <p className="text-xs text-fuchsia-900">Disclaimer</p>
           <p className="text-xs text-fuchsia-900">Terms and conditions</p>
