@@ -33,7 +33,7 @@ export default function NavMobile() {
         <div className="flex flex-col gap-2 aspect-square">
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <MenuIcon className="bg-fuchsia-200 text-fuchsia-700 rounded-xl h-full w-full p-2" />
+              <MenuIcon className="bg-fuchsia-200 text-fuchsia-700 rounded-xl h-12 w-full p-2" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="mr-8 mt-2">
               <DropdownMenuItem asChild>
