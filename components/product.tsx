@@ -79,7 +79,7 @@ export default function Product(props: ProductProps) {
         </DrawerTrigger>
         <DrawerContent className="px-20">
           <div className="flex flex-col justify-center items-center my-10">
-            <div className="max-w-[500px] w-full flex justify-between items-center mb-10">
+            <div className="max-w-[500px] w-full flex flex-col-reverse xl:flex-row justify-between items-center mb-10">
               <div>
                 <h2>{props.title}</h2>
                 <ul className="list-disc ml-4 mt-4">
@@ -89,14 +89,14 @@ export default function Product(props: ProductProps) {
                 </ul>
               </div>
               <div
-                className={`bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} fuchsia p-8 h-40 w-40 rounded-lg flex items-center justify-center`}
+                className={`bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} fuchsia p-8 h-32 w-32 rounded-lg flex items-center justify-center mb-4 xl:mb-0`}
               >
                 <Image
                   src={`/images/${props.image}.png`}
                   alt="product image"
                   width={100}
                   height={100}
-                  className="w-24 h-24"
+                  className="w-16 h-16"
                 ></Image>
               </div>
             </div>
