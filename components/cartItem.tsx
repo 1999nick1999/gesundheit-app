@@ -41,7 +41,7 @@ export default function CartItem(props: ProductProps) {
             </ul>
           </div>
           <div
-            className={`w-full aspect-square mb-4 xl:mb-0 xl:h-40 xl::w-40 flex items-center justify-center bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} rounded-lg`}
+            className={`w-full aspect-square mb-4 xl:mb-0 xl:h-40 xl:w-40 flex items-center justify-center bg-gradient-to-tl ${props.colorFrom} ${props.colorTo} rounded-lg`}
           >
             <Image
               src={`/images/${props.image}.png`}
